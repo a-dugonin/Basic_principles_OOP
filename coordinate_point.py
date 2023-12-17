@@ -1,4 +1,5 @@
 class PointCoordinates:
+    """ Класс позволяет создать точку с коррдинатами x и yпше икфтср"""
     __count = 0
 
     def __init__(self, x: int = 0, y: int = 0):
