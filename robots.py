@@ -27,6 +27,7 @@ class WarRobot(Robot):
         self.gun = gun
 
     def operate(self):
+        """ Данный метод позволяет роботу защищать базу """
         print(f'Робот защищает базу с помощью оружия {self.gun}')
 
 
@@ -37,6 +38,7 @@ class SubmarineRobot(WarRobot):
         self.depth = depth
 
     def operate(self):
+        """ Данный метод позволяет роботу защищать базу с указанием на какой глубине он это делает """
         super().operate()
         print(f'Охрана ведется под водой на глубине {self.depth}')
 
