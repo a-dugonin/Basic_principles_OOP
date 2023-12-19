@@ -40,8 +40,6 @@ class Citizen(Unit):
 
 
 def main():
-    unit = Unit()
-    print(unit)
     soldier = Soldier('Солдат')
     print(soldier)
     soldier.take_damage(10)
