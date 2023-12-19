@@ -3,6 +3,7 @@ from human import Human
 from ships import WarShip, CargoShip
 from robots import WarRobot, SubmarineRobot, RobotCleaner
 from custom_exceptions import DivisionError
+from units import Soldier, Citizen
 
 # coordinate_point (task_1)
 # point_1 = PointCoordinates(x=1, y=1)
@@ -49,16 +50,26 @@ from custom_exceptions import DivisionError
 # submarine_robot.operate()
 
 # custom_exception (task_5)
-try:
-    with open('numbers.txt', encoding='utf8') as file:
-        num_1, num_2 = file.readline().split()
-        if int(num_1) > int(num_2):
-            print(int(num_1) / int(num_2))
-        else:
-            raise DivisionError('Нельзя делить меньшее на большее')
-except FileNotFoundError:
-    print('Такого файла не существует!')
-except ValueError:
-    print('Переданы не числовые значения')
-except DivisionError:
-    print('Нельзя делить меньшее на большее')
+# try:
+#     with open('numbers.txt', encoding='utf8') as file:
+#         num_1, num_2 = file.readline().split()
+#         if int(num_1) > int(num_2):
+#             print(int(num_1) / int(num_2))
+#         else:
+#             raise DivisionError('Нельзя делить меньшее на большее')
+# except FileNotFoundError:
+#     print('Такого файла не существует!')
+# except ValueError:
+#     print('Переданы не числовые значения')
+# except DivisionError:
+#     print('Нельзя делить меньшее на большее')
+
+# units (task_6)
+soldier = Soldier('Солдат')
+print(soldier)
+soldier.take_damage(10)
+soldier.take_damage(30)
+print()
+citizen = Citizen('Обычный гражданин')
+print(citizen)
+citizen.take_damage(30)
