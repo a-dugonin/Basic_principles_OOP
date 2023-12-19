@@ -1,7 +1,7 @@
 from coordinate_point import PointCoordinates
 from human import Human
-from ships import Ship, WarShip, CargoShip
-from robots import Robot, WarRobot, SubmarineRobot, RobotCleaner
+from ships import WarShip, CargoShip
+from robots import WarRobot, SubmarineRobot, RobotCleaner
 
 # coordinate_point (task_1)
 # point_1 = PointCoordinates(x=1, y=1)
