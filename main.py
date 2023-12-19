@@ -1,7 +1,8 @@
 from coordinate_point import PointCoordinates
 from human import Human
-from ships import Ship, WarShip, CargoShip
-from robots import Robot, WarRobot, SubmarineRobot, RobotCleaner
+from ships import WarShip, CargoShip
+from robots import WarRobot, SubmarineRobot, RobotCleaner
+from custom_exceptions import DivisionError
 
 # coordinate_point (task_1)
 # point_1 = PointCoordinates(x=1, y=1)
@@ -35,14 +36,29 @@ from robots import Robot, WarRobot, SubmarineRobot, RobotCleaner
 # cargo_ship.walk_on_water()
 
 # robots (task_4)
-robot_cleaner = RobotCleaner(model='vacuum_cleaner-1')
-print(robot_cleaner)
-robot_cleaner.operate()
-print()
-war_robot = WarRobot(model='super_war-version_3', gun='пулемет')
-print(war_robot)
-war_robot.operate()
-print()
-submarine_robot = SubmarineRobot(model='submarine_last-5', gun='ракета', depth=20)
-print(submarine_robot)
-submarine_robot.operate()
+# robot_cleaner = RobotCleaner(model='vacuum_cleaner-1')
+# print(robot_cleaner)
+# robot_cleaner.operate()
+# print()
+# war_robot = WarRobot(model='super_war-version_3', gun='пулемет')
+# print(war_robot)
+# war_robot.operate()
+# print()
+# submarine_robot = SubmarineRobot(model='submarine_last-5', gun='ракета', depth=20)
+# print(submarine_robot)
+# submarine_robot.operate()
+
+# custom_exception (task_5)
+try:
+    with open('numbers.txt', encoding='utf8') as file:
+        num_1, num_2 = file.readline().split()
+        if int(num_1) > int(num_2):
+            print(int(num_1) / int(num_2))
+        else:
+            raise DivisionError('Нельзя делить меньшее на большее')
+except FileNotFoundError:
+    print('Такого файла не существует!')
+except ValueError:
+    print('Переданы не числовые значения')
+except DivisionError:
+    print('Нельзя делить меньшее на большее')
