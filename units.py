@@ -21,6 +21,7 @@ class Unit:
 
 class Soldier(Unit):
     def take_damage(self, damage: int = 0):
+        """ Метод для реализации нанесения урона объекту """
         health = self.get_health() - damage
         self.set_health(health)
         return super().take_damage()
@@ -31,6 +32,7 @@ class Soldier(Unit):
 
 class Citizen(Unit):
     def take_damage(self, damage: int = 0):
+        """ Метод для реализации нанесения урона объекту """
         health = self.get_health() - damage * 2
         self.set_health(health)
         return super().take_damage()
