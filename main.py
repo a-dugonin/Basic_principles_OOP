@@ -4,6 +4,7 @@ from ships import WarShip, CargoShip
 from robots import WarRobot, SubmarineRobot, RobotCleaner
 from custom_exceptions import DivisionError
 from units import Soldier, Citizen
+from can_fly import Butterfly, Rocket
 
 # coordinate_point (task_1)
 # point_1 = PointCoordinates(x=1, y=1)
@@ -65,11 +66,25 @@ from units import Soldier, Citizen
 #     print('Нельзя делить меньшее на большее')
 
 # units (task_6)
-soldier = Soldier('Солдат')
-print(soldier)
-soldier.take_damage(10)
-soldier.take_damage(30)
+# soldier = Soldier('Солдат')
+# print(soldier)
+# soldier.take_damage(10)
+# soldier.take_damage(30)
+# print()
+# citizen = Citizen('Обычный гражданин')
+# print(citizen)
+# citizen.take_damage(30)
+
+# can_fly (task_7)
+butterfly = Butterfly()
+print(butterfly)
+butterfly.take_off(height=1)
+butterfly.fly(speed=0.5)
+print(butterfly)
 print()
-citizen = Citizen('Обычный гражданин')
-print(citizen)
-citizen.take_damage(30)
+rocket = Rocket()
+print(rocket)
+rocket.take_off(height=500, speed=1000)
+print(rocket)
+rocket.to_land(landing_status=True)
+print(rocket)
